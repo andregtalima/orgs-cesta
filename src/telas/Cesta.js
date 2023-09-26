@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, Dimensions, Text, View } from 'react-native';
 
 import topo from '../../assets/topo.png';
+import logo from '../../assets/logo.png'
 
 const width = Dimensions.get('screen').width
 
@@ -13,8 +14,8 @@ export default function Cesta() {
 
             <View style={styles.cesta}>
                 <Text style={styles.name}>Cesta de Verduras</Text>
-                <View>
-                    <Image />
+                <View style={styles.farm}>
+                    <Image source={logo} style={styles.logo}/>
                     <Text style={styles.nameFarm}>Jenny Jack Farm</Text>
                 </View>
                 <Text style={styles.description}>Uma cesta com produtos selecionados cuidadosamente da fazenda direto para sua cozinha</Text>
@@ -48,6 +49,15 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         fontWeight: 'bold'
+    },
+    farm: {
+        flexDirection: 'row',
+        gap: 12,
+        paddingVertical: 12,
+    },
+    logo: {
+        width: 32,
+        height: 32,
     },
     nameFarm: {
         fontSize: 16,
